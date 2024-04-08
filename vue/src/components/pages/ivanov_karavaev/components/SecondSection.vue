@@ -4,7 +4,9 @@
   <h2>Choose your tour</h2>
 </div>
 <div class="second-section__search">B</div>
-<div class="second-section__cards">C</div>
+<div class="second-section__cards">
+  <SmallCard/>
+</div>
 <div class="second-section__see-all">
   <button class="second-section__see-all__button">See all</button>
 </div>
@@ -12,8 +14,11 @@
 </template>
 
 <script>
+import SmallCard from "@/components/pages/ivanov_karavaev/components/SmallCard.vue";
+
 export default {
-  name: "SecondSection"
+  name: "SecondSection",
+  components: {SmallCard}
 }
 
 </script>
@@ -25,7 +30,7 @@ h2 {
 
 .second-section {
   display: grid;
-  grid-template: 1fr 2fr 1fr / repeat(2, 1fr);
+  grid-template: 0.5fr 2fr 0.5fr / repeat(2, 1fr);
   margin-top: 100px;
   width: 90vw;
   align-self: center;
