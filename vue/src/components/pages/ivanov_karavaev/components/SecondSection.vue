@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <slot/>
-  </div>
+
 </template>
 
 <script>
 export default {
-  name: "CenterButton"
+  name: "SecondSection"
 }
 
 </script>
