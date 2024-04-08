@@ -3,6 +3,7 @@
     <HomeHeader/>
     <FirstSection/>
     <SecondSection/>
+    <HomeFooter/>
   </div>
 </template>
 
@@ -11,23 +12,22 @@ import "../fonts/cinaGeoStylesheet.css"
 import HomeHeader from "@/components/pages/ivanov_karavaev/components/HomeHeader.vue";
 import FirstSection from "@/components/pages/ivanov_karavaev/components/FirstSection.vue";
 import SecondSection from "@/components/pages/ivanov_karavaev/components/SecondSection.vue";
+import HomeFooter from "@/components/pages/ivanov_karavaev/components/HomeFooter.vue";
 
 export default {
   name: "IslandHomePage",
-  components: {SecondSection, FirstSection, HomeHeader}
+  components: {HomeFooter, SecondSection, FirstSection, HomeHeader}
 }
 </script>
 
 <style lang="less">
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: 'Cina GEO';
   font-weight: normal;
   font-style: normal;
   font-size: 20px;
   color: #1a1e18;
+  box-sizing: border-box;
 }
 
 h1 {
