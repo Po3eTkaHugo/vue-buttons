@@ -29,7 +29,7 @@ export default {
 <style scoped lang="less">
 .head {
   display: grid;
-  grid-template-columns: 1fr auto auto auto auto auto  1fr;
+  grid-template-columns: 1fr repeat(5, auto)  1fr;
   gap: 100px;
   align-items: center;
 

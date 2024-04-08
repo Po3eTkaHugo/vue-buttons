@@ -55,6 +55,8 @@ h3 {
   padding: 20px 20px;
   height: 100vh;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 </style>
