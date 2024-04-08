@@ -32,18 +32,26 @@ export default {
 </script>
 
 <style scoped lang="less">
+h2 {
+  color: #fff;
+  font-size: 148px;
+  line-height: 102%;
+}
+
+h3 {
+  color: #fff;
+}
+
 .first-section {
   display: grid;
   margin-top: 20px;
   padding: 100px 60px 50px;
   border-radius: 20px;
-  width: 80vw;
-  height: 80vh;
+  height: 90vh;
   background-image: url("../images/nature1.jpg");
   background-size: cover;
   grid-template: 2fr repeat(4, 1fr) / 3fr 1fr;
   gap: 5px;
-  align-self: center;
 
   &__title {
     grid-area: 1 / 1 / 2 / 2;
@@ -92,7 +100,7 @@ export default {
     &__scroll-btn {
       grid-area: 2 / 4 / 3 / 5;
       display: flex;
-      justify-content: right;
+      justify-content: center;
 
       &__button {
         color: #fff;
