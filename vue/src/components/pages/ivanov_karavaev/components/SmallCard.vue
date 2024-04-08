@@ -35,12 +35,14 @@ export default {
 
 <style scoped lang="less">
 .small-card {
-  border: #f4f4f4 solid 2px;
+  border: #e1e1e1 solid 2px;
   border-radius: 20px;
   width: 16vw;
   height: 50vh;
   padding: 20px;
-//38vh pix height
+  background-image: url("../images/trip1.jpg");
+  background-repeat: no-repeat;
+  background-size: 48vh;
   &__description {
     display: grid;
     width: 100%;
@@ -49,13 +51,12 @@ export default {
 
     &__rating {
       grid-area: 1 / 2 / 2 / 3;
-      border: #8C2B3D solid 1px;
 
       &__place {
         height: 40px;
         border-radius: 20px;
-        background-color: #8C2B3D;
-        backdrop-filter: blur(3px);
+        background-color: rgba(108, 108, 108, 0.25);
+        backdrop-filter: blur(5px);
         color: #fff;
         padding: 5px 15px;
         font-weight: 300;
