@@ -6,6 +6,10 @@
 <div class="second-section__search">B</div>
 <div class="second-section__cards">
   <SmallCard/>
+  <SmallCard/>
+  <SmallCard/>
+  <SmallCard/>
+  <SmallCard/>
 </div>
 <div class="second-section__see-all">
   <button class="second-section__see-all__button">See all</button>
@@ -30,7 +34,7 @@ h2 {
 
 .second-section {
   display: grid;
-  grid-template: 0.5fr 2fr 0.5fr / repeat(2, 1fr);
+  grid-template: 1fr auto 1fr / repeat(2, 1fr);
   margin-top: 100px;
   width: 90vw;
   align-self: center;
@@ -48,6 +52,10 @@ h2 {
   &__cards {
     grid-area: 2 / 1 / 3 / 3;
     border: red solid 1px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   &__see-all {

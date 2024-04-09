@@ -1,6 +1,10 @@
 <template>
-  <div class="small-card"><!--
-    <div class="small-card__pic"></div>-->
+  <div class="small-card">
+    <img
+      src="../images/trip1.jpg"
+      alt="trip1.jpg"
+      class="small-card__pic"
+    >
     <div class="small-card__description">
       <div class="small-card__description__rating">
         <div class="small-card__description__rating__place">
@@ -39,14 +43,22 @@ export default {
   border-radius: 20px;
   width: 16vw;
   height: 50vh;
-  padding: 20px;
-  background-image: url("../images/trip1.jpg");
-  background-repeat: no-repeat;
-  background-size: 48vh;
+  display: grid;
+
+  &__pic {
+    object-fit: cover;
+    width: 100%;
+    height: 75%;
+    border-radius: 20px;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
   &__description {
+    grid-area: 1 / 1 / 2 / 2;
     display: grid;
     width: 100%;
     height: 100%;
+    padding: 20px;
     grid-template: 80% repeat(2, 10%) / 2fr 1fr;
 
     &__rating {
