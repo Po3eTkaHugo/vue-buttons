@@ -1,10 +1,10 @@
 <template>
-  <div class="big-card">
+  <div class="big-card" :style="{ backgroundImage: 'url(' + getBigCard[getIndex]['image'] + ')' }">
     <div class="big-card__title">
-      <h2>Explore the sights of the Azores</h2>
+      <h2>{{ getBigCard[getIndex]['title'] }}</h2>
     </div>
     <div class="big-card__description">
-      <h3>A place where nature and adventure unite</h3>
+      <h3>{{ getBigCard[getIndex]['description'] }}</h3>
     </div>
     <div class="big-card__book-btn">
       <button class="big-card__book-btn__button">Book now</button>
@@ -15,18 +15,31 @@
         <button class="big-card__bottom__scroll-btn__button">↓</button>
       </div>
       <div class="big-card__bottom__previous-btn">
-        <button class="big-card__bottom__previous-btn__button pagination-button">←</button>
+        <button class="pagination-button" @click="decrIndex">←</button>
       </div>
       <div class="big-card__bottom__next-btn">
-        <button class="big-card__bottom__next-btn__button pagination-button">→</button>
+        <button class="pagination-button" @click="incrIndex">→</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import {mapActions, mapGetters} from "vuex";
+
 export default {
-  name: "BigCard"
+  name: "BigCard",
+  computed: {
+    ...mapGetters('bigCardStore', [
+      'getBigCard',
+      'getIndex'
+    ])
+  },
+  methods: {
+    ...mapActions('bigCardStore', [
+      'incrIndex', 'decrIndex'
+    ])
+  }
 }
 
 </script>
@@ -46,7 +59,6 @@ h3 {
   padding: 100px 60px 50px;
   border-radius: 20px;
   height: 90vh;
-  background-image: url("https://klike.net/uploads/posts/2019-11/1574605311_20.jpeg");
   background-size: cover;
   grid-template: 2fr repeat(4, 1fr) / 3fr 1fr;
   gap: 5px;
@@ -122,20 +134,10 @@ h3 {
 
     &__previous-btn {
       grid-area: 2 / 1 / 3 / 2;
-
-      &__button {
-        height: 72px;
-        width: 72px;
-      }
     }
 
     &__next-btn {
       grid-area: 2 / 2 / 3 / 3;
-
-      &__button {
-        height: 72px;
-        width: 72px;
-      }
     }
   }
 
@@ -148,6 +150,8 @@ h3 {
     background: none;
     border: solid 2px #fff;
     border-radius: 100%;
+    height: 72px;
+    width: 72px;
 
     &:hover {
       background-color: #fff;
