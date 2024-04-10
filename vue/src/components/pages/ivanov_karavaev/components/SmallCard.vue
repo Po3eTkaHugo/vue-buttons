@@ -1,25 +1,28 @@
 <template>
   <div class="small-card">
     <img
-      src="../images/trip1.jpg"
-      alt="trip1.jpg"
+      :src= image
+      alt="trip.jpg"
       class="small-card__pic"
-    >
+    />
     <div class="small-card__description">
       <div class="small-card__description__rating">
         <div class="small-card__description__rating__place">
-          5.0
+          {{ rating }}
           <img
             src="../images/star.png"
             alt="star.png"
-            class="small-card__description__rating__place__star">
+            class="small-card__description__rating__place__star"
+          />
         </div>
       </div>
       <div class="small-card__description__title">
-        Alone with nature
+        {{ title }}
       </div>
       <div class="small-card__description__price">
-        <span class="small-card__description__price__count">$100</span>
+        <span class="small-card__description__price__count">
+          ${{ price }}
+        </span>
         <span class="small-card__description__price__slash">/</span>
         <span class="small-card__description__price__person">person</span>
       </div>
@@ -31,8 +34,33 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex";
+
 export default {
-  name: "SmallCard"
+  name: "SmallCard",
+  props: {
+    title: {
+      type: String,
+      require: 'true'
+    },
+    price: {
+      type: Number,
+      require: 'true'
+    },
+    rating: {
+      type: String,
+      require: 'true'
+    },
+    image: {
+      type: String,
+      require: 'true'
+    }
+  },
+  computed: {
+    ...mapGetters('smallCardStore', [
+      'getSmallCard'
+    ])
+  }
 }
 
 </script>

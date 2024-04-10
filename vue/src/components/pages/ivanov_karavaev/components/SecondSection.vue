@@ -3,13 +3,23 @@
 <div class="second-section__title">
   <h2>Choose your tour</h2>
 </div>
-<div class="second-section__search">B</div>
+<div class="second-section__search">
+  <input
+      v-model="searchingWords"
+      type="text"
+      placeholder="Find your travel"
+      class="second-section__search__input"
+  />
+</div>
 <div class="second-section__cards">
-  <SmallCard/>
-  <SmallCard/>
-  <SmallCard/>
-  <SmallCard/>
-  <SmallCard/>
+  <SmallCard
+    v-for="(card, index) in filteredCards"
+    :key="index"
+    :title="card.title"
+    :price="card.price"
+    :rating="card.rating"
+    :image="card.image"
+  />
 </div>
 <div class="second-section__see-all">
   <button class="second-section__see-all__button">See all</button>
@@ -19,10 +29,25 @@
 
 <script>
 import SmallCard from "@/components/pages/ivanov_karavaev/components/SmallCard.vue";
+import {mapGetters} from "vuex";
 
 export default {
   name: "SecondSection",
-  components: {SmallCard}
+  components: {SmallCard},
+  data () {
+    return {
+      searchingWords: ''
+    }
+  },
+  computed: {
+    ...mapGetters('smallCardStore', [
+        'getSmallCard',
+        'getFilteredCards'
+    ]),
+    filteredCards () {
+      return this.getFilteredCards(this.searchingWords)
+    }
+  }
 }
 
 </script>
@@ -41,26 +66,29 @@ h2 {
 
   &__title {
     grid-area: 1 / 1 / 2 / 2;
-    border: red solid 1px;
   }
 
   &__search {
     grid-area: 1 / 2 / 2 / 3;
-    border: red solid 1px;
+
+    &__input {
+      width: 100%;
+      height: 100%;
+      font-size: 32px;
+    }
   }
 
   &__cards {
     grid-area: 2 / 1 / 3 / 3;
-    border: red solid 1px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: 30px 0;
   }
 
   &__see-all {
     grid-area: 3 / 1 / 4 / 3;
-    border: red solid 1px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,10 +1,14 @@
 <template>
   <div class="big-card" :style="{ backgroundImage: 'url(' + getBigCard[getIndex]['image'] + ')' }">
     <div class="big-card__title">
-      <h2>{{ getBigCard[getIndex]['title'] }}</h2>
+      <h2>
+        {{ getBigCard[getIndex]['title'] }}
+      </h2>
     </div>
     <div class="big-card__description">
-      <h3>{{ getBigCard[getIndex]['description'] }}</h3>
+      <h3>
+        {{ getBigCard[getIndex]['description'] }}
+      </h3>
     </div>
     <div class="big-card__book-btn">
       <button class="big-card__book-btn__button">Book now</button>
