@@ -1,13 +1,13 @@
 <template>
-  <div class="big-card" :style="{ backgroundImage: 'url(' + getBigCard[getIndex]['image'] + ')' }">
+  <div class="big-card" :style="{ backgroundImage: 'url(' + image + ')' }">
     <div class="big-card__title">
       <h2>
-        {{ getBigCard[getIndex]['title'] }}
+        {{ title }}
       </h2>
     </div>
     <div class="big-card__description">
       <h3>
-        {{ getBigCard[getIndex]['description'] }}
+        {{ description }}
       </h3>
     </div>
     <div class="big-card__book-btn">
@@ -19,30 +19,41 @@
         <button class="big-card__bottom__scroll-btn__button">↓</button>
       </div>
       <div class="big-card__bottom__previous-btn">
-        <button class="pagination-button" @click="decrIndex">←</button>
+        <button class="pagination-button" @click="() => clickLeft()">←</button>
       </div>
       <div class="big-card__bottom__next-btn">
-        <button class="pagination-button" @click="incrIndex">→</button>
+        <button class="pagination-button" @click="() => clickRight()">→</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "BigCard",
-  computed: {
-    ...mapGetters('bigCardStore', [
-      'getBigCard',
-      'getIndex'
-    ])
+  props: {
+    title: {
+      type: String,
+      required: 'true'
+    },
+    description: {
+      type: String,
+      required: 'true'
+    },
+    image: {
+      type: String,
+      required: 'true'
+    },
+
   },
   methods: {
-    ...mapActions('bigCardStore', [
-      'incrIndex', 'decrIndex'
-    ])
+    clickLeft () {
+      this.$emit('clickDecr')
+    },
+    clickRight () {
+      this.$emit('clickIncr')
+    }
   }
 }
 

@@ -1,15 +1,33 @@
 <template>
     <div class="first-section">
-      <BigCard/>
+      <BigCard
+        :title="getBigCard[getIndex]['title']"
+        :description="getBigCard[getIndex]['description']"
+        :image="getBigCard[getIndex]['image']"
+        @clickDecr="() => decrIndex()"
+        @clickIncr="() => incrIndex()"
+      />
     </div>
 </template>
 
 <script>
 import BigCard from "@/components/pages/ivanov_karavaev/components/BigCard.vue";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "FirstSection",
-  components: {BigCard}
+  components: {BigCard},
+  computed: {
+    ...mapGetters('bigCardStore', [
+      'getBigCard',
+      'getIndex'
+    ])
+  },
+  methods: {
+    ...mapActions('bigCardStore', [
+      'incrIndex', 'decrIndex'
+    ])
+  }
 }
 
 </script>
