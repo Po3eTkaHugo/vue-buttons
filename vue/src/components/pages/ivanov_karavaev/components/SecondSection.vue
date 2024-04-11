@@ -85,6 +85,7 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 30px 0;
+    row-gap: 35px;
   }
 
   &__see-all {

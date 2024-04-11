@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomePage from '../components/pages/Home.vue'
 import { RouteNames } from './routes'
 import IslandHomePage from "../components/pages/ivanov_karavaev/pages/IslandHomePage.vue"
+import addTourPage from "@/components/pages/ivanov_karavaev/pages/AddTourPage.vue";
 
 Vue.use(VueRouter)
 
@@ -13,9 +14,14 @@ const routes = [
     component: HomePage
   },
   {
-    path: '/island_home',
+    path: '/island/home',
     name: RouteNames.ISLANDHOME,
     component: IslandHomePage
+  },
+  {
+    path: '/island/add',
+    name: RouteNames.ADDTOUR,
+    component: addTourPage
   }
 ]
 

@@ -1,4 +1,5 @@
 export enum RouteNames {
   HOME = "HOME",
-  ISLANDHOME = "ISLANDHOME"
+  ISLANDHOME = "ISLANDHOME",
+  ADDTOUR = "ADDTOUR"
 }
