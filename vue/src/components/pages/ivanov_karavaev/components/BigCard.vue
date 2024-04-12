@@ -26,12 +26,22 @@
     <div class="big-card__bottom__next-btn">
       <button class="pagination-button" @click="() => clickRight()">→</button>
     </div>
+    <div class="big-card__bottom__dots">
+      <div
+          v-for="(card, index) in getBigCard"
+          :key="index"
+          class="big-card__bottom__dots__figure"
+          :class="{ 'big-card__bottom__dots__figure--current': index === getIndex }"
+      >
+      </div>
+    </div>
   </div>
 </div>
 </template>
 
 <script>
 import {RouteNames} from "@/router/routes";
+import {mapGetters} from "vuex";
 
 export default {
   name: "BigCard",
@@ -50,6 +60,10 @@ export default {
     },
   },
   computed: {
+    ...mapGetters('bigCardStore', [
+     'getBigCard',
+     'getIndex'
+    ]),
     routeNames () {
       return RouteNames
     }
@@ -162,25 +176,47 @@ export default {
     &__next-btn {
       grid-area: 2 / 2 / 3 / 3;
     }
-  }
 
-  .pagination-button {
-    color: #fff;
-    font-family: 'Cina GEO';
-    font-weight: 100;
-    font-style: normal;
-    font-size: 32px;
-    background: none;
-    border: solid 2px #fff;
-    border-radius: 100%;
-    height: 72px;
-    width: 72px;
+    &__dots {
+      grid-area: 2 / 3 / 3 / 4;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
 
-    &:hover {
-      background-color: #fff;
-      color: #1a1e18;
+      &__figure {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: none;
+        background: #fff;
+        opacity: 50%;
+        cursor: pointer;
+
+        &--current {
+          opacity: 100%;
+        }
+      }
     }
   }
 }
 
+.pagination-button {
+  color: #fff;
+  font-family: 'Cina GEO';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 32px;
+  background: none;
+  border: solid 2px #fff;
+  border-radius: 100%;
+  height: 72px;
+  width: 72px;
+
+  &:hover {
+    background-color: #fff;
+    color: #1a1e18;
+  }
+}
 </style>
