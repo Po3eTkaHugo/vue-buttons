@@ -27,7 +27,9 @@
         <span class="small-card__description__price__person">person</span>
       </div>
       <div class="small-card__description__goto">
-        <button class="small-card__description__goto__button">→</button>
+        <router-link :to="{ name: routeNames.ISLANDTOUR, params: { id: 1 } }">
+          <button class="small-card__description__goto__button">→</button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -35,6 +37,7 @@
 
 <script>
 import {mapGetters} from "vuex";
+import {RouteNames} from "@/router/routes";
 
 export default {
   name: "SmallCard",
@@ -59,7 +62,10 @@ export default {
   computed: {
     ...mapGetters('smallCardStore', [
       'getSmallCard'
-    ])
+    ]),
+    routeNames () {
+      return RouteNames
+    }
   }
 }
 

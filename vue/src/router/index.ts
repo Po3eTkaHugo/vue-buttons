@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomePage from '../components/pages/Home.vue'
-import { RouteNames } from './routes'
 import IslandHomePage from "../components/pages/ivanov_karavaev/pages/IslandHomePage.vue"
-import addTourPage from "@/components/pages/ivanov_karavaev/pages/AddTourPage.vue";
+import AddTourPage from "@/components/pages/ivanov_karavaev/pages/AddTourPage.vue";
+import TourPage from "@/components/pages/ivanov_karavaev/pages/TourPage.vue";
+import { RouteNames } from './routes'
 
 Vue.use(VueRouter)
 
@@ -21,7 +22,12 @@ const routes = [
   {
     path: '/island/add',
     name: RouteNames.ISLANDADDTOUR,
-    component: addTourPage
+    component: AddTourPage
+  },
+  {
+    path: '/island/tour/:id',
+    name: RouteNames.ISLANDTOUR,
+    component: TourPage
   }
 ]
 

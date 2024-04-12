@@ -38,7 +38,7 @@ import HomeHeader from "@/components/pages/ivanov_karavaev/components/HomeHeader
 import {mapActions} from "vuex";
 
 export default {
-  name: 'addTourPage',
+  name: 'AddTourPage',
   components: {HomeHeader},
   data () {
     return {

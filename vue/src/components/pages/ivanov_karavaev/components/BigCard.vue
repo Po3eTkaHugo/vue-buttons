@@ -11,7 +11,9 @@
       </h3>
     </div>
     <div class="big-card__book-btn">
-      <button class="big-card__book-btn__button">Book now</button>
+      <router-link :to="{ name: routeNames.ISLANDTOUR, params: { id: 1 } }">
+        <button class="big-card__book-btn__button">Book now</button>
+      </router-link>
     </div>
     <div class="big-card__bottom">
       <div class="big-card__bottom__scroll-text">Scroll down</div>
@@ -30,6 +32,8 @@
 
 <script>
 
+import {RouteNames} from "@/router/routes";
+
 export default {
   name: "BigCard",
   props: {
@@ -46,6 +50,11 @@ export default {
       required: 'true'
     },
 
+  },
+  computed: {
+    routeNames () {
+      return RouteNames
+    }
   },
   methods: {
     clickLeft () {
@@ -93,12 +102,13 @@ h3 {
     align-items: center;
 
     &__button {
-      height: 80%;
-      width: 30%;
+      height: 10vh;
+      width: 30vw;
       border: none;
       background-color: #fff;
       border-radius: 30px;
       font-weight: 600;
+      font-size: 32px;
 
       &:hover {
         filter: brightness(80%);
