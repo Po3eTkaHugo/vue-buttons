@@ -20,7 +20,7 @@ const routes = [
   },
   {
     path: '/island/add',
-    name: RouteNames.ADDTOUR,
+    name: RouteNames.ISLANDADDTOUR,
     component: addTourPage
   }
 ]
