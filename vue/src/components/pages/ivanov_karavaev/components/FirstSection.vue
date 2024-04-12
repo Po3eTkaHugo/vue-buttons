@@ -1,13 +1,13 @@
 <template>
-    <div class="first-section">
-      <BigCard
-        :title="getBigCard[getIndex]['title']"
-        :description="getBigCard[getIndex]['description']"
-        :image="getBigCard[getIndex]['image']"
-        @clickDecr="() => decrIndex()"
-        @clickIncr="() => incrIndex()"
-      />
-    </div>
+<div class="first-section">
+  <BigCard
+    :title="getBigCard[getIndex]['title']"
+    :description="getBigCard[getIndex]['description']"
+    :image="getBigCard[getIndex]['image']"
+    @clickDecr="() => decrIndex()"
+    @clickIncr="() => incrIndex()"
+  />
+</div>
 </template>
 
 <script>

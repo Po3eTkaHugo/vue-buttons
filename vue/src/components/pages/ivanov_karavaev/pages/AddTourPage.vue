@@ -3,28 +3,28 @@
   <HomeHeader/>
   <div class="add-page__inputs">
     <input
-        v-model="title"
-        type="text"
-        placeholder="Place your title here"
-        class="add-page__inputs__title window"
+      v-model="title"
+      type="text"
+      placeholder="Place your title here"
+      class="add-page__inputs__title window"
     />
     <input
-        v-model="price"
-        type="text"
-        placeholder="Place your price here"
-        class="add-page__inputs__price window"
+      v-model="price"
+      type="text"
+      placeholder="Place your price here"
+      class="add-page__inputs__price window"
     />
     <input
-        v-model="rating"
-        type="text"
-        placeholder="Place your rating here"
-        class="add-page__inputs__rating window"
+      v-model="rating"
+      type="text"
+      placeholder="Place your rating here"
+      class="add-page__inputs__rating window"
     />
     <input
-        v-model="image"
-        type="text"
-        placeholder="Place your image url here"
-        class="add-page__inputs__image window"
+      v-model="image"
+      type="text"
+      placeholder="Place your image url here"
+      class="add-page__inputs__image window"
     />
   </div>
   <button class="add-page__create-btn" @click="() => create()">
@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     ...mapActions('smallCardStore', [
-        'addSmallCard'
+      'addSmallCard'
     ]),
     create () {
       if (this.title === '' || this.price === '' || this.rating === '' || this.image === '')

@@ -1,10 +1,10 @@
 <template>
-  <div class="home">
-    <HomeHeader/>
-    <FirstSection/>
-    <SecondSection/>
-    <HomeFooter/>
-  </div>
+<div class="home">
+  <HomeHeader/>
+  <FirstSection/>
+  <SecondSection/>
+  <HomeFooter/>
+</div>
 </template>
 
 <script>

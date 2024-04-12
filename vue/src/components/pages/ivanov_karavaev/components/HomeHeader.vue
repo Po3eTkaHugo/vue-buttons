@@ -13,9 +13,11 @@
       <CenterButton class="head__center-element">Add tour</CenterButton>
     </router-link>
     <div class="head__right-element">
-      <img src="../images/menu.png"
-           alt="menu"
-           class="head__right-element__menu-img">
+      <img
+        src="../images/menu.png"
+        alt="menu"
+        class="head__right-element__menu-img"
+      >
     </div>
   </header>
 </template>

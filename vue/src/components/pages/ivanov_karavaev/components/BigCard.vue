@@ -1,37 +1,36 @@
 <template>
-  <div class="big-card" :style="{ backgroundImage: 'url(' + image + ')' }">
-    <div class="big-card__title">
-      <h2>
-        {{ title }}
-      </h2>
+<div class="big-card" :style="{ backgroundImage: 'url(' + image + ')' }">
+  <div class="big-card__title">
+    <h2 class="big-card__title--head">
+      {{ title }}
+    </h2>
+  </div>
+  <div class="big-card__description">
+    <h3 class="big-card__description--text">
+      {{ description }}
+    </h3>
+  </div>
+  <div class="big-card__book-btn">
+    <router-link :to="{ name: routeNames.ISLANDTOUR, params: { id: 1 } }">
+      <button class="big-card__book-btn__button">Book now</button>
+    </router-link>
+  </div>
+  <div class="big-card__bottom">
+    <div class="big-card__bottom__scroll-text">Scroll down</div>
+    <div class="big-card__bottom__scroll-btn">
+      <button class="big-card__bottom__scroll-btn__button">↓</button>
     </div>
-    <div class="big-card__description">
-      <h3>
-        {{ description }}
-      </h3>
+    <div class="big-card__bottom__previous-btn">
+      <button class="pagination-button" @click="() => clickLeft()">←</button>
     </div>
-    <div class="big-card__book-btn">
-      <router-link :to="{ name: routeNames.ISLANDTOUR, params: { id: 1 } }">
-        <button class="big-card__book-btn__button">Book now</button>
-      </router-link>
-    </div>
-    <div class="big-card__bottom">
-      <div class="big-card__bottom__scroll-text">Scroll down</div>
-      <div class="big-card__bottom__scroll-btn">
-        <button class="big-card__bottom__scroll-btn__button">↓</button>
-      </div>
-      <div class="big-card__bottom__previous-btn">
-        <button class="pagination-button" @click="() => clickLeft()">←</button>
-      </div>
-      <div class="big-card__bottom__next-btn">
-        <button class="pagination-button" @click="() => clickRight()">→</button>
-      </div>
+    <div class="big-card__bottom__next-btn">
+      <button class="pagination-button" @click="() => clickRight()">→</button>
     </div>
   </div>
+</div>
 </template>
 
 <script>
-
 import {RouteNames} from "@/router/routes";
 
 export default {
@@ -49,7 +48,6 @@ export default {
       type: String,
       required: 'true'
     },
-
   },
   computed: {
     routeNames () {
@@ -69,15 +67,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-h2 {
-  color: #fff;
-  font-size: 148px;
-}
-
-h3 {
-  color: #fff;
-}
-
 .big-card {
   display: grid;
   padding: 100px 60px 50px;
@@ -89,11 +78,20 @@ h3 {
 
   &__title {
     grid-area: 1 / 1 / 2 / 2;
+
+    &--head {
+      color: #fff;
+      font-size: 148px;
+    }
   }
 
   &__description {
     grid-area: 2 / 1 / 3 / 2;
     color: #fff;
+
+    &--text {
+      color: #fff;
+    }
   }
 
   &__book-btn {
