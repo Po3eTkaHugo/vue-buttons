@@ -46,7 +46,7 @@ export default {
       commit('incrIndex')
     },
     decrIndex: ({commit}) => {
-      commit('incrIndex')
+      commit('decrIndex')
     }
   }
 }
