@@ -1,13 +1,13 @@
 <template>
-<div class="big-card" :style="{ backgroundImage: 'url(' + image + ')' }">
+<div class="big-card" :style="{ backgroundImage: 'url(' + bigCardArray[currentIndex]['image'] + ')' }">
   <div class="big-card__title">
     <h2 class="big-card__title--head">
-      {{ title }}
+      {{ bigCardArray[currentIndex]['title'] }}
     </h2>
   </div>
   <div class="big-card__description">
     <h3 class="big-card__description--text">
-      {{ description }}
+      {{ bigCardArray[currentIndex]['description'] }}
     </h3>
   </div>
   <div class="big-card__book-btn">
@@ -28,10 +28,11 @@
     </div>
     <div class="big-card__bottom__dots">
       <div
-          v-for="(card, index) in getBigCard"
+          v-for="(card, index) in bigCardArray"
           :key="index"
           class="big-card__bottom__dots__figure"
-          :class="{ 'big-card__bottom__dots__figure--current': index === getIndex }"
+          :class="{ 'big-card__bottom__dots__figure--current': index === currentIndex }"
+          @click="() => move(index)"
       >
       </div>
     </div>
@@ -41,29 +42,20 @@
 
 <script>
 import {RouteNames} from "@/router/routes";
-import {mapGetters} from "vuex";
 
 export default {
   name: "BigCard",
   props: {
-    title: {
-      type: String,
+    currentIndex: {
+      type: Number,
       required: 'true'
     },
-    description: {
-      type: String,
+    bigCardArray: {
+      type: Array,
       required: 'true'
-    },
-    image: {
-      type: String,
-      required: 'true'
-    },
+    }
   },
   computed: {
-    ...mapGetters('bigCardStore', [
-     'getBigCard',
-     'getIndex'
-    ]),
     routeNames () {
       return RouteNames
     }
@@ -74,6 +66,9 @@ export default {
     },
     clickRight () {
       this.$emit('clickIncr')
+    },
+    move (index) {
+      this.$emit('selectCard', index)
     }
   }
 }

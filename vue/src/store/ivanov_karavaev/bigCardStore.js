@@ -17,36 +17,16 @@ export default {
         description: "Feel the warmth of the sand on yourself",
         image: "https://laplaya-rus.ru/wp-content/uploads/7/d/e/7deadb56f4c2973de147aded05c03e88.jpeg"
       }
-    ],
-    index: 0
+    ]
   },
 
   getters: {
-    getBigCard: (state) => state.bigCardData,
-    getIndex: (state) => state.index
+    getBigCard: (state) => state.bigCardData
   },
 
   mutations: {
-    incrIndex: (state) => {
-      if (state.index === state.bigCardData.length - 1)
-        state.index = 0
-      else
-        state.index += 1
-    },
-    decrIndex: (state) => {
-      if (state.index === 0)
-        state.index = state.bigCardData.length - 1
-      else
-        state.index -= 1
-    }
   },
 
   actions: {
-    incrIndex: ({commit}) => {
-      commit('incrIndex')
-    },
-    decrIndex: ({commit}) => {
-      commit('decrIndex')
-    }
   }
 }
