@@ -1,5 +1,5 @@
 <template>
-<div class="big-card" :style="{ backgroundImage: 'url(' + bigCardArray[currentIndex]['image'] + ')' }">
+<div class="big-card" :style="cardImage">
   <div class="big-card__title">
     <h2 class="big-card__title--head">
       {{ bigCardArray[currentIndex]['title'] }}
@@ -58,6 +58,9 @@ export default {
   computed: {
     routeNames () {
       return RouteNames
+    },
+    cardImage() {
+      return { backgroundImage: 'url(' + this.bigCardArray[this.currentIndex]['image'] + ')' }
     }
   },
   methods: {
