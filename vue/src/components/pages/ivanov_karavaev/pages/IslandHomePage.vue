@@ -1,5 +1,5 @@
 <template>
-<div class="home">
+<div class="home island-styles">
   <HomeHeader/>
   <FirstSection/>
   <SecondSection/>
@@ -22,36 +22,38 @@ export default {
 <style lang="less">
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-  font-family: "Jost", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 20px;
-  color: #1a1e18;
-  box-sizing: border-box;
-}
+.island-styles {
+  * {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    color: #1a1e18;
+    box-sizing: border-box;
+  }
 
-h1 {
-  font-family: "Jost", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 32px;
-}
+  h1 {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 32px;
+  }
 
-h2 {
-  font-family: "Jost", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
-}
+  h2 {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+  }
 
-h3 {
-  font-family: "Jost", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
+  h3 {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
 }
 
 .home {
