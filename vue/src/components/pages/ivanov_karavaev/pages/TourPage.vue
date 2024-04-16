@@ -1,10 +1,7 @@
 <template>
 <div class="tour">
   <HomeHeader/>
-  <div
-    class="tour__card"
-    :style="cardImage"
-  >
+  <div class="tour__card" :style="cardImage">
     <h2 class="tour__card__title">
       {{ getSmallCard[$route.params.id]['title'] }}
     </h2>
@@ -52,6 +49,7 @@ export default {
     flex-direction: column;
     border-radius: 20px;
     background-size: cover;
+    line-height: 130px;
 
     &__title {
       color: #fff;

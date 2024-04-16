@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import "../fonts/cinaGeoStylesheet.css"
 import HomeHeader from "@/components/pages/ivanov_karavaev/components/HomeHeader.vue";
 import FirstSection from "@/components/pages/ivanov_karavaev/components/FirstSection.vue";
 import SecondSection from "@/components/pages/ivanov_karavaev/components/SecondSection.vue";
@@ -21,8 +20,11 @@ export default {
 </script>
 
 <style lang="less">
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
-  font-family: 'Cina GEO';
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
   font-size: 20px;
@@ -31,20 +33,23 @@ export default {
 }
 
 h1 {
-  font-family: 'Cina GEO';
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
   font-size: 32px;
 }
 
 h2 {
-  font-family: 'Cina GEO';
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
 }
 
 h3 {
-  font-family: 'Cina GEO';
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
 }

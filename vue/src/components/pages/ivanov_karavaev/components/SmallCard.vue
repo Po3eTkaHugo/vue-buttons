@@ -27,9 +27,9 @@
         <span class="small-card__description__price__person">person</span>
       </div>
       <div class="small-card__description__goto">
-        <router-link :to="{ name: routeNames.ISLANDTOUR, params: { id: 1 } }">
+        <RouterLink :to="{ name: routeNames.ISLANDTOUR, params: { id: 1 } }">
           <button class="small-card__description__goto__button">→</button>
-        </router-link>
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -158,7 +158,6 @@ export default {
         height: 5vh;
         border-radius: 100%;
         color: #fff;
-        font-size: 35px;
         font-weight: 200;
 
         &:hover {

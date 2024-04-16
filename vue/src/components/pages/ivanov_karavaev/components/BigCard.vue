@@ -11,9 +11,9 @@
     </h3>
   </div>
   <div class="big-card__book-btn">
-    <router-link :to="{ name: routeNames.ISLANDTOUR, params: { id: 1 } }">
+    <RouterLink :to="{ name: routeNames.ISLANDTOUR, params: { id: 1 } }">
       <button class="big-card__book-btn__button">Book now</button>
-    </router-link>
+    </RouterLink>
   </div>
   <div class="big-card__bottom">
     <div class="big-card__bottom__scroll-text">Scroll down</div>
@@ -135,7 +135,8 @@ export default {
     &__scroll-text {
       grid-area: 1 / 4 / 2 / 5;
       color: #fff;
-      font-family: 'Cina GEO';
+      font-family: "Jost", sans-serif;
+      font-optical-sizing: auto;
       font-weight: 200;
       font-style: normal;
       font-size: 14px;
@@ -149,7 +150,8 @@ export default {
 
       &__button {
         color: #fff;
-        font-family: 'Cina GEO';
+        font-family: "Jost", sans-serif;
+        font-optical-sizing: auto;
         font-weight: 100;
         font-style: normal;
         font-size: 32px;
@@ -202,7 +204,8 @@ export default {
 
 .pagination-button {
   color: #fff;
-  font-family: 'Cina GEO';
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
   font-size: 32px;
