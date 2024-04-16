@@ -1,5 +1,5 @@
 <template>
-<div class="tour">
+<div class="tour island-styles">
   <HomeHeader/>
   <div class="tour__card" :style="cardImage">
     <h2 class="tour__card__title">

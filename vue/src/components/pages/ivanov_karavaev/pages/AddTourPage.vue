@@ -1,5 +1,5 @@
 <template>
-<div class="add-page">
+<div class="add-page island-styles">
   <HomeHeader/>
   <div class="add-page__inputs">
     <input

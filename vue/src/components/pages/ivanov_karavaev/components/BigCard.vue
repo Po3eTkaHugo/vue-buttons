@@ -85,7 +85,7 @@ export default {
   border-radius: 20px;
   height: 90vh;
   background-size: cover;
-  grid-template: 2fr repeat(4, 1fr) / 3fr 1fr;
+  grid-template: 60% repeat(4, auto) / 3fr 1fr;
   gap: 5px;
 
   &__title {
