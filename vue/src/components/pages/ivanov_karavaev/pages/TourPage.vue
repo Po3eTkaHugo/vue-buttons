@@ -3,7 +3,7 @@
   <HomeHeader/>
   <div
     class="tour__card"
-    :style="{ backgroundImage: 'url(' + getSmallCard[$route.params.id]['image'] + ')' }"
+    :style="cardImage"
   >
     <h2 class="tour__card__title">
       {{ getSmallCard[$route.params.id]['title'] }}
@@ -29,7 +29,10 @@ export default {
   computed: {
     ...mapGetters('smallCardStore', [
       'getSmallCard'
-    ])
+    ]),
+    cardImage() {
+      return { backgroundImage: 'url(' + this.getSmallCard[this.$route.params.id]['image'] + ')' };
+    }
   }
 }
 </script>
