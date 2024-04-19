@@ -37,7 +37,7 @@ export default {
 <style scoped lang="less">
 .tour {
   padding: 20px 20px;
-  height: 100vh;
+  height: 95.7vh;
   background-color: #fff;
   display: flex;
   flex-direction: column;

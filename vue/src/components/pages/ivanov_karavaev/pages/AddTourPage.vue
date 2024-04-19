@@ -1,7 +1,7 @@
 <template>
 <div class="add-page island-styles">
   <HomeHeader/>
-  <div class="add-page__inputs">
+  <div class="add-page__content">
     <input
       v-model="title"
       type="text"
@@ -26,10 +26,10 @@
       placeholder="Place your image url here"
       class="add-page__inputs__image window"
     />
-  </div>
   <button class="add-page__create-btn" @click="() => create()">
     Create
   </button>
+</div>
 </div>
 </template>
 
@@ -77,12 +77,12 @@ export default {
 <style scoped lang="less">
 .add-page {
   padding: 20px 20px;
-  height: 100vh;
+  height: 95.7vh;
   background-color: #fff;
   display: flex;
   flex-direction: column;
 
-  &__inputs {
+  &__content {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;

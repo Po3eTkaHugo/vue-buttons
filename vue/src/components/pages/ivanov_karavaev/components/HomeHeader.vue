@@ -5,12 +5,12 @@
         <button class="head__left-element__home-btn">island*</button>
       </router-link>
     </div>
-    <CenterButton class="head__center-element">Our tours</CenterButton>
-    <CenterButton class="head__center-element">About us</CenterButton>
-    <CenterButton class="head__center-element">Booking</CenterButton>
-    <CenterButton class="head__center-element">FAQ</CenterButton>
+    <div class="head__center-element">Our tours</div>
+    <div class="head__center-element">About us</div>
+    <div class="head__center-element">Booking</div>
+    <div class="head__center-element">FAQ</div>
     <router-link :to="{ name: routeNames.ISLANDADDTOUR }">
-      <CenterButton class="head__center-element">Add tour</CenterButton>
+      <div class="head__center-element">Add tour</div>
     </router-link>
     <div class="head__right-element">
       <img
@@ -23,8 +23,6 @@
 </template>
 
 <script>
-
-import CenterButton from "@/components/pages/ivanov_karavaev/components/CenterButton.vue";
 import {RouteNames} from "@/router/routes";
 
 export default {
@@ -33,8 +31,7 @@ export default {
     routeNames () {
       return RouteNames
     }
-  },
-  components: {CenterButton}
+  }
 }
 </script>
 
