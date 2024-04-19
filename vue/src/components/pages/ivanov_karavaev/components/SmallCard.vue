@@ -1,14 +1,14 @@
 <template>
   <div class="small-card">
     <img
-      :src= "card['image']"
+      :src= "card.image"
       alt="trip.jpg"
       class="small-card__pic"
     />
     <div class="small-card__description">
       <div class="small-card__description__rating">
         <div class="small-card__description__rating__place">
-          {{ card['rating'] }}
+          {{ card.rating }}
           <img
             src="../images/star.png"
             alt="star.png"
@@ -17,11 +17,11 @@
         </div>
       </div>
       <div class="small-card__description__title">
-        {{ card['title'] }}
+        {{ card.title }}
       </div>
       <div class="small-card__description__price">
         <span class="small-card__description__price__count">
-          ${{ card['price'] }}
+          ${{ card.price }}
         </span>
         <span class="small-card__description__price__slash">/</span>
         <span class="small-card__description__price__person">person</span>
