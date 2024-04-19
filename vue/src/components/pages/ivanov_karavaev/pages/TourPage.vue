@@ -30,7 +30,7 @@ export default {
       'getSmallCard'
     ]),
     cardImage() {
-      return { backgroundImage: 'url(' + this.getSmallCard[this.$route.params.id]['image'] + ')' };
+      return { backgroundImage: 'url(' + this.getSmallCard[this.$route.params.id]['image'] + ')' }
     }
   }
 }

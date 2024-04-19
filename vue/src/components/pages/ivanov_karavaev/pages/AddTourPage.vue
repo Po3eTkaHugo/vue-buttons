@@ -55,8 +55,9 @@ export default {
       'addSmallCard'
     ]),
     create () {
-      if (this.title === '' || this.price === '' || this.rating === '' || this.image === '')
+      if (this.title === '' || this.price === '' || this.rating === '' || this.image === '') {
         alert('Данные введены некоректно')
+      }
       else {
         const newTour = {
           title: this.title,

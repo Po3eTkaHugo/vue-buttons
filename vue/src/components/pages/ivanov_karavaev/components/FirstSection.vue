@@ -31,19 +31,23 @@ export default {
   },
   methods: {
     incrIndex ()  {
-      if (this.currentIndex === this.getBigCard.length - 1)
-        this.currentIndex = 0;
-      else
-        this.currentIndex += 1;
+      if (this.currentIndex === this.getBigCard.length - 1) {
+        this.currentIndex = 0
+      }
+      else {
+        this.currentIndex += 1
+      }
     },
     decrIndex () {
-      if (this.currentIndex === 0)
-        this.currentIndex = this.getBigCard.length - 1;
-      else
-        this.currentIndex -= 1;
+      if (this.currentIndex === 0) {
+        this.currentIndex = this.getBigCard.length - 1
+      }
+      else {
+        this.currentIndex -= 1
+      }
     },
     selectCard (index) {
-      this.currentIndex = index;
+      this.currentIndex = index
     }
   }
 }
