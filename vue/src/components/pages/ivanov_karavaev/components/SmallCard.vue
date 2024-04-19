@@ -1,14 +1,14 @@
 <template>
   <div class="small-card">
     <img
-      :src= image
+      :src= "card['image']"
       alt="trip.jpg"
       class="small-card__pic"
     />
     <div class="small-card__description">
       <div class="small-card__description__rating">
         <div class="small-card__description__rating__place">
-          {{ rating }}
+          {{ card['rating'] }}
           <img
             src="../images/star.png"
             alt="star.png"
@@ -17,11 +17,11 @@
         </div>
       </div>
       <div class="small-card__description__title">
-        {{ title }}
+        {{ card['title'] }}
       </div>
       <div class="small-card__description__price">
         <span class="small-card__description__price__count">
-          ${{ price }}
+          ${{ card['price'] }}
         </span>
         <span class="small-card__description__price__slash">/</span>
         <span class="small-card__description__price__person">person</span>
@@ -36,33 +36,17 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
 import {RouteNames} from "@/router/routes";
 
 export default {
   name: "SmallCard",
   props: {
-    title: {
-      type: String,
-      require: 'true'
-    },
-    price: {
-      type: Number,
-      require: 'true'
-    },
-    rating: {
-      type: String,
-      require: 'true'
-    },
-    image: {
-      type: String,
-      require: 'true'
+    card: {
+      type: Object,
+      required: 'true'
     }
   },
   computed: {
-    ...mapGetters('smallCardStore', [
-      'getSmallCard'
-    ]),
     routeNames () {
       return RouteNames
     }

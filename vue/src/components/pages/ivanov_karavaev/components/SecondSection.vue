@@ -15,10 +15,7 @@
       <SmallCard
         v-for="(card, index) in filteredCards"
         :key="index"
-        :title="card.title"
-        :price="card.price"
-        :rating="card.rating"
-        :image="card.image"
+        :card="card"
       />
     </div>
   </div>
