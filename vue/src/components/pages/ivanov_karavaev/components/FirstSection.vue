@@ -16,7 +16,9 @@ import {mapGetters} from "vuex";
 
 export default {
   name: "FirstSection",
-  components: {BigCard},
+  components: {
+    BigCard
+  },
   data () {
     return {
       currentIndex: 0
@@ -45,7 +47,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style scoped lang="less">

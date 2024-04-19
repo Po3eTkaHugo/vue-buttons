@@ -39,7 +39,9 @@ import {mapActions} from "vuex";
 
 export default {
   name: 'AddTourPage',
-  components: {HomeHeader},
+  components: {
+    HomeHeader
+  },
   data () {
     return {
       title: '',

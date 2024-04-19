@@ -51,7 +51,6 @@
 export default {
   name: "HomeFooter"
 }
-
 </script>
 
 <style scoped lang="less">

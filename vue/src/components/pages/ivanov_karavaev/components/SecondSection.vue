@@ -30,7 +30,9 @@ import {mapGetters} from "vuex";
 
 export default {
   name: "SecondSection",
-  components: {SmallCard},
+  components: {
+    SmallCard
+  },
   data() {
     return {
       searchingWords: ''
@@ -46,7 +48,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style scoped lang="less">

@@ -22,7 +22,9 @@ import {mapGetters} from "vuex";
 
 export default {
   name: "TourPage",
-  components: {HomeHeader},
+  components: {
+    HomeHeader
+  },
   computed: {
     ...mapGetters('smallCardStore', [
       'getSmallCard'

@@ -15,7 +15,12 @@ import HomeFooter from "@/components/pages/ivanov_karavaev/components/HomeFooter
 
 export default {
   name: "IslandHomePage",
-  components: {HomeFooter, SecondSection, FirstSection, HomeHeader}
+  components: {
+    HomeFooter,
+    SecondSection,
+    FirstSection,
+    HomeHeader
+  }
 }
 </script>
 
