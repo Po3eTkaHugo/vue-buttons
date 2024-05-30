@@ -1,14 +1,12 @@
 <template>
 <div class="first-section">
-  <div v-if="bigCards.length > 0">
-    <BigCard
+    <BigCard v-if="bigCards.length > 0"
         :currentIndex="currentIndex"
         :bigCardArray="bigCards"
         @clickDecr="() => decrIndex()"
         @clickIncr="() => incrIndex()"
         @selectCard="(index) => selectCard(index)"
     />
-  </div>
 </div>
 </template>
 
@@ -31,7 +29,7 @@ export default {
       'getBigCard'
     ]),
     bigCards () {
-      return this.getBigCard;
+      return this.getBigCard
     }
   },
   methods: {
@@ -59,7 +57,7 @@ export default {
     }
   },
   created () {
-    this.loadBigCard();
+    this.loadBigCard()
   }
 }
 </script>

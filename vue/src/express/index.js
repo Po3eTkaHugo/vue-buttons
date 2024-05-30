@@ -87,7 +87,7 @@ app.get('/bigCardData', (req, res) => {
 
 app.get('/smallCardData', (req, res) => {
   if (req.query && req.query.title) {
-    return res.json(smallCardData.filter(card => card.title.toLowerCase().includes(req.query.title.toLowerCase)))
+    return res.json(smallCardData.filter(card => card.title.toLowerCase().includes(req.query.title.toLowerCase())))
   }
   return res.json(smallCardData);
 });

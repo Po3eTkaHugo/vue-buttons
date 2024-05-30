@@ -13,7 +13,7 @@
     </div>
     <div class="second-section__cards">
       <SmallCard
-        v-for="(card, index) in filteredCards"
+        v-for="(card, index) in smallCards"
         :key="index"
         :card="card"
       />
@@ -23,7 +23,7 @@
 
 <script>
 import SmallCard from "@/components/pages/ivanov_karavaev/components/SmallCard.vue";
-import {mapGetters} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "SecondSection",
@@ -37,11 +37,23 @@ export default {
   },
   computed: {
     ...mapGetters('smallCardStore', [
-      'getSmallCard',
-      'getFilteredCards'
+      'getSmallCard'
     ]),
-    filteredCards() {
-      return this.getFilteredCards(this.searchingWords)
+    smallCards () {
+      return this.getSmallCard
+    }
+  },
+  methods: {
+    ...mapActions('smallCardStore', [
+      'loadSmallCard'
+    ])
+  },
+  created () {
+    this.loadSmallCard('')
+  },
+  watch: {
+    searchingWords(words) {
+      this.loadSmallCard(words)
     }
   }
 }
