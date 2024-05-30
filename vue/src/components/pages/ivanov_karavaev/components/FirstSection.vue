@@ -1,18 +1,20 @@
 <template>
 <div class="first-section">
-  <BigCard
-    :currentIndex="currentIndex"
-    :bigCardArray="getBigCard"
-    @clickDecr="() => decrIndex()"
-    @clickIncr="() => incrIndex()"
-    @selectCard="(index) => selectCard(index)"
-  />
+  <div v-if="bigCards.length > 0">
+    <BigCard
+        :currentIndex="currentIndex"
+        :bigCardArray="bigCards"
+        @clickDecr="() => decrIndex()"
+        @clickIncr="() => incrIndex()"
+        @selectCard="(index) => selectCard(index)"
+    />
+  </div>
 </div>
 </template>
 
 <script>
 import BigCard from "@/components/pages/ivanov_karavaev/components/BigCard.vue";
-import {mapGetters} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "FirstSection",
@@ -27,9 +29,15 @@ export default {
   computed: {
     ...mapGetters('bigCardStore', [
       'getBigCard'
-    ])
+    ]),
+    bigCards () {
+      return this.getBigCard;
+    }
   },
   methods: {
+    ...mapActions('bigCardStore', [
+      'loadBigCard'
+    ]),
     incrIndex ()  {
       if (this.currentIndex === this.getBigCard.length - 1) {
         this.currentIndex = 0
@@ -49,6 +57,9 @@ export default {
     selectCard (index) {
       this.currentIndex = index
     }
+  },
+  created () {
+    this.loadBigCard();
   }
 }
 </script>

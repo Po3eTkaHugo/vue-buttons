@@ -1,29 +1,38 @@
+import axios from "axios"
+
 const state = {
-  bigCardData: [
-    {
-      title: "Explore the sights of the Azores",
-      description: "A place where nature and adventure unite",
-      image: "https://klike.net/uploads/posts/2019-11/1574605311_20.jpeg"
-    },
-    {
-      title: "Explore open spaces",
-      description: "Feel the peace of being alone",
-      image: "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696576815_gas-kvas-com-p-kartinki-ravnina-33.jpg"
-    },
-    {
-      title: "Explore desert worlds",
-      description: "Feel the warmth of the sand on yourself",
-      image: "https://laplaya-rus.ru/wp-content/uploads/7/d/e/7deadb56f4c2973de147aded05c03e88.jpeg"
-    }
-  ]
+  bigCardData: []
 }
 
 const getters = {
   getBigCard: (state) => state.bigCardData
 }
 
+const mutations = {
+  setBigCardData: (state, payload) => {
+    state.bigCardData = payload
+  }
+}
+
+const actions = {
+  loadBigCard: ({ commit }) => {
+    axios.get('http://localhost:3000/bigCardData')
+      .then((res) => {
+        commit('setBigCardData', res.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        console.log("Done")
+      })
+  }
+}
+
 export default {
   namespaced: true,
   state,
-  getters
+  getters,
+  mutations,
+  actions
 }
