@@ -36,6 +36,18 @@ const actions = {
     .finally(() => {
       console.log("Done")
     })
+  },
+  loadSmallCardById: ({ commit }, payload) => {
+    axios.get(`http://localhost:3000/smallCardData/${payload}`)
+      .then((res) => {
+        commit('setSmallCardData', res.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        console.log("Done")
+      })
   }
 }
 

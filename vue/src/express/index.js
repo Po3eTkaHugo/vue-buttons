@@ -92,6 +92,14 @@ app.get('/smallCardData', (req, res) => {
   return res.json(smallCardData);
 });
 
+app.get('/smallCardData/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const smallCard = smallCardData[id]
+  return res.json(smallCard);
+})
+
+
+
 server.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

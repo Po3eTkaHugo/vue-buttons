@@ -3,13 +3,13 @@
   <HomeHeader/>
   <div class="tour__card" :style="cardImage">
     <h2 class="tour__card__title">
-      {{ getSmallCard[$route.params.id]['title'] }}
+      {{ smallCard.title }}
     </h2>
     <p class="tour__card__rating">
-      Rating: {{ getSmallCard[$route.params.id]['rating'] }}
+      Rating: {{ smallCard.rating }}
     </p>
     <p class="tour__card__price">
-      Price: ${{ getSmallCard[$route.params.id]['price'] }} per person
+      Price: ${{ smallCard.price }} per person
     </p>
     <button class="tour__card__book">BOOK NOW</button>
   </div>
@@ -18,7 +18,7 @@
 
 <script>
 import HomeHeader from "@/components/pages/ivanov_karavaev/components/HomeHeader.vue";
-import {mapGetters} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "TourPage",
@@ -29,9 +29,20 @@ export default {
     ...mapGetters('smallCardStore', [
       'getSmallCard'
     ]),
-    cardImage() {
-      return { backgroundImage: 'url(' + this.getSmallCard[this.$route.params.id]['image'] + ')' }
+    smallCard () {
+      return this.getSmallCard
+    },
+    cardImage () {
+      return { backgroundImage: 'url(' + this.getSmallCard['image'] + ')' }
     }
+  },
+  methods: {
+    ...mapActions('smallCardStore', [
+      'loadSmallCardById'
+    ])
+  },
+  created () {
+    this.loadSmallCardById(this.$route.params.id)
   }
 }
 </script>
