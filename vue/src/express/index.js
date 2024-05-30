@@ -82,24 +82,27 @@ const smallCardData = [
 ];
 
 app.get('/bigCardData', (req, res) => {
-  return res.json(bigCardData);
+  return res.json(bigCardData)
 });
 
 app.get('/smallCardData', (req, res) => {
   if (req.query && req.query.title) {
     return res.json(smallCardData.filter(card => card.title.toLowerCase().includes(req.query.title.toLowerCase())))
   }
-  return res.json(smallCardData);
+  return res.json(smallCardData)
 });
 
 app.get('/smallCardData/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const smallCard = smallCardData[id]
-  return res.json(smallCard);
-})
+  return res.json(smallCard)
+});
 
-
+app.post('/smallCardData', (req, res) => {
+  const newSmallCard = req.body
+  smallCardData.push(newSmallCard)
+});
 
 server.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-})
+});

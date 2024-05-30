@@ -11,16 +11,10 @@ const getters = {
 const mutations = {
   setSmallCardData: (state, payload) => {
     state.smallCardData = payload
-  },
-  addSmallCard: (state, newCard) => {
-    state.smallCardData.push(newCard)
   }
 }
 
 const actions = {
-  addSmallCard: ({commit}, newCard) => {
-    commit('addSmallCard', newCard)
-  },
   loadSmallCard: ({ commit }, payload) => {
     axios.get('http://localhost:3000/smallCardData', {
       params: {
@@ -48,6 +42,23 @@ const actions = {
       .finally(() => {
         console.log("Done")
       })
+  },
+  addSmallCard: ({dispatch}, newCard) => {
+    return new Promise((resolve, reject) => {
+      axios.post('http://localhost:3000/smallCardData', newCard)
+        .then(res => {
+          console.log(res.data);
+          dispatch('loadSmallCard');
+          resolve(res.data);
+        })
+        .catch(e => {
+          console.log(e);
+          reject(e);
+        })
+        .finally(() => {
+          console.log(1);
+        })
+    })
   }
 }
 
