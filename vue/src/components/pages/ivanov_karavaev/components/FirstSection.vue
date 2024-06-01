@@ -1,6 +1,8 @@
 <template>
 <div class="first-section">
     <BigCard v-if="bigCards.length > 0"
+        :currentIndex="currentIndex"
+        :arraySize="bigCards.length"
         :bigCard="currentBigCard"
         @clickDecr="() => decrIndex()"
         @clickIncr="() => incrIndex()"

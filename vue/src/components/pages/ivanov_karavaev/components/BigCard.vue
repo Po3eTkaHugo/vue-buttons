@@ -28,7 +28,7 @@
     </div>
     <div class="big-card__bottom__dots">
       <div
-          v-for="(card, index) in bigCardArray"
+          v-for="(card, index) in arraySize"
           :key="index"
           class="big-card__bottom__dots__figure"
           :class="{ 'big-card__bottom__dots__figure--current': index === currentIndex }"
@@ -46,8 +46,16 @@ import {RouteNames} from "@/router/routes";
 export default {
   name: "BigCard",
   props: {
+    currentIndex: {
+      type: Number,
+      required: 'true'
+    },
     bigCard: {
       type: Object,
+      required: 'true'
+    },
+    arraySize: {
+      type: Number,
       required: 'true'
     }
   },
@@ -67,7 +75,9 @@ export default {
       this.$emit('clickIncr')
     },
     move (index) {
-      this.$emit('selectCard', index)
+      if (this.currentIndex !== index) {
+        this.$emit('selectCard', index)
+      }
     }
   }
 }
