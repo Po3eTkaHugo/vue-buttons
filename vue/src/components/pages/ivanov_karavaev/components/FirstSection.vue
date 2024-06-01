@@ -1,8 +1,7 @@
 <template>
 <div class="first-section">
     <BigCard v-if="bigCards.length > 0"
-        :currentIndex="currentIndex"
-        :bigCardArray="bigCards"
+        :bigCard="currentBigCard"
         @clickDecr="() => decrIndex()"
         @clickIncr="() => incrIndex()"
         @selectCard="(index) => selectCard(index)"
@@ -30,6 +29,9 @@ export default {
     ]),
     bigCards () {
       return this.getBigCard
+    },
+    currentBigCard () {
+      return this.bigCards[this.currentIndex]
     }
   },
   methods: {

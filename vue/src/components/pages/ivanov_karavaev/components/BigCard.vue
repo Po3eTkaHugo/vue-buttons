@@ -2,12 +2,12 @@
 <div class="big-card" :style="cardImage">
   <div class="big-card__title">
     <h2 class="big-card__title--head">
-      {{ bigCardArray[currentIndex].title }}
+      {{ bigCard.title }}
     </h2>
   </div>
   <div class="big-card__description">
     <h3 class="big-card__description--text">
-      {{ bigCardArray[currentIndex].description }}
+      {{ bigCard.description }}
     </h3>
   </div>
   <div class="big-card__book-btn">
@@ -46,12 +46,8 @@ import {RouteNames} from "@/router/routes";
 export default {
   name: "BigCard",
   props: {
-    currentIndex: {
-      type: Number,
-      required: 'true'
-    },
-    bigCardArray: {
-      type: Array,
+    bigCard: {
+      type: Object,
       required: 'true'
     }
   },
@@ -60,7 +56,7 @@ export default {
       return RouteNames
     },
     cardImage() {
-      return { backgroundImage: 'url(' + this.bigCardArray[this.currentIndex].image + ')' }
+      return { backgroundImage: 'url(' + this.bigCard.image + ')' }
     }
   },
   methods: {
