@@ -27,7 +27,7 @@
         <span class="small-card__description__price__person">person</span>
       </div>
       <div class="small-card__description__goto">
-        <RouterLink :to="{ name: routeNames.ISLANDTOUR, params: { id: 1 } }">
+        <RouterLink :to="{ name: routeNames.ISLANDTOUR, params: { id: cardIndex } }">
           <button class="small-card__description__goto__button">→</button>
         </RouterLink>
       </div>
@@ -43,6 +43,10 @@ export default {
   props: {
     card: {
       type: Object,
+      required: 'true'
+    },
+    cardIndex: {
+      type: Number,
       required: 'true'
     }
   },

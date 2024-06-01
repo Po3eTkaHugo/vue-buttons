@@ -15,6 +15,7 @@
     <div class="second-section__cards">
       <SmallCard
         v-for="(card, index) in smallCards"
+        :cardIndex="index"
         :key="index"
         :card="card"
       />
