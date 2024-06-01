@@ -6,6 +6,7 @@
     <div class="second-section__search">
       <input
         v-model="searchingWords"
+        @input="updateSearch"
         type="text"
         placeholder="Find your travel"
         class="second-section__search__input"
@@ -46,15 +47,13 @@ export default {
   methods: {
     ...mapActions('smallCardStore', [
       'loadSmallCard'
-    ])
+    ]),
+    updateSearch () {
+      this.loadSmallCard(this.searchingWords)
+    }
   },
   created () {
     this.loadSmallCard('')
-  },
-  watch: {
-    searchingWords(words) {
-      this.loadSmallCard(words)
-    }
   }
 }
 </script>
